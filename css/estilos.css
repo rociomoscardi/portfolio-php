@@ -19,7 +19,7 @@ h1{
     font-size: 36px;
 }
 
-p{
+p, #confirmacion p{
     color: #6a6a6a;
 }
 
@@ -67,7 +67,7 @@ p{
     color: white;
 }
 
-#inicio, #contacto{
+#inicio, #contacto, #confirmacion{
     background-image: url("../images/fondo-contacto.png");
     background-size: cover;
     background-repeat: no-repeat;

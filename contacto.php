@@ -1,5 +1,34 @@
 <?php 
     $pg = "contacto";
+
+    if($_POST){
+        $nombre = $_POST["txtNombre"];
+        $correo = $_POST["txtCorreo"];
+        $telefono = $_POST["txtTelefono"];
+        $mensaje = $_POST["txtMensaje"];
+        
+        $para = "rocioabrilmoscardi@gmail.com";
+        $titulo = "Recibiste un mensaje desde tu web";
+
+        $cuerpo = "
+        Nombre: $nombre <br>
+        Correo: $correo <br>
+        Telefono: $telefono <br>
+        Mensaje: $mensaje
+        ";
+
+        //cabeceras content-type obligatorias.
+        $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+        $cabeceras .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+        //cabeceras adicionales.
+        $cabeceras .= 'To: rocioabrilmoscardi@gmail.com' . "\r\n";
+        $cabeceras .= 'From: contacto@rociomoscardi.com.ar' . "\r\n";
+
+        //enviarlo
+        //mail($para, $titulo, $cuerpo, $cabeceras); - por ahora está comentado porque el portfolio no está subido a ningún servidor que nos habilite las credenciales necesarias para esto.
+        header("Location: confirmacion_envio.php");
+    }
 ?>
 
 <!DOCTYPE html>
